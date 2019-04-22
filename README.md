@@ -21,6 +21,7 @@ Or install it yourself as:
     $ gem install SocialShare
 
 ## Usage
+
 Add this line to your application's initializers file.
 ```ruby
 require 'SocialShare'
