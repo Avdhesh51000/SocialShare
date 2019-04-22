@@ -3,9 +3,21 @@ require "share_button/helper"
 # require "config"
 # require "helper"
 
-# I18n.load_path += Dir.glob( File.dirname(__FILE__) + "lib/locales/*.{rb,yml}" ) 
+# I18n.load_path += Dir.glob( File.dirname(__FILE__) + "lib/locales/*.{rb,yml}" )
 
 module ShareButton
+  NETWORK_LIST = [
+    :facebook,
+    :google,
+    :linkedin,
+    :pinterest,
+    :reddit,
+    :twitter,
+    :weibo
+  ]
+  def supported_networks
+    NETWORK_LIST
+  end
   module Rails
     if ::Rails.version < "3.1"
       require "share_button/railtie"
@@ -24,4 +36,3 @@ end
 #                           delicious tumblr pinterest email linkedin wechat vkontakte
 #                           xing reddit hacker_news telegram odnoklassniki whatsapp_app whatsapp_web)
 # end
-
