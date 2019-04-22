@@ -21,8 +21,35 @@ Or install it yourself as:
     $ gem install SocialShare
 
 ## Usage
+Add this line to your application's initializers file.
+```ruby
+require 'SocialShare'
+```
 
-TODO: Write usage instructions here
+Get The Count of Social Share
+```ruby
+ social_count = SocialShare::Count.selected "https://www.google.com/", %w(facebook reddit)
+```
+Get The List of Supported Network For Count:
+```ruby
+SocialShare::Count.supported_networks
+ => [:facebook, :google, :reddit, :weibo] 
+```
+
+Get The List of Supported Network For Share Button:
+```ruby
+SocialShare::Button.supported_networks
+ => [:facebook, :google, :linkedin, :pinterest, :reddit, :twitter, :weibo] 
+```
+
+Add Button With Image to view
+```ruby
+     <%= social_share_button_tag('',:allow_sites => 'facebook',img: {src: 'http://Default Image Url.com/',class: 'class for default image'}, :url => "https://my shatring url/", :image => "https://my image url.com/", desc: 'The summary of page',class: 'my class to btn') %>
+```
+Add a link Without image to view
+```ruby
+      <%= social_share_button_tag('Facebook',:allow_sites => 'facebook', :url => "https://my shatring url/", :image => "https://my image url.com/", desc: 'The summary of page',class: 'my class to btn') %>
+```
 
 ## Development
 
